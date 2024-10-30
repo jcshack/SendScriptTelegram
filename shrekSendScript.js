@@ -1,10 +1,10 @@
 async function sendScript(script_text){
-	const send_line_time = 1250;
-	const resolve_time = 1000;
+	const send_line_time = 150;
+	const resolve_time = 100;
 
 	const lines = script_text.split(/[\n\t]+/).map(line => line.trim()).filter(line => line);
-	const textarea = document.querySelector("#editable-message-text");
-	const send_button = document.querySelector(".main-button");
+	const textarea = document.querySelector(".input-message-input");
+	const send_button = document.querySelector(".btn-send");
 	
 	if(!textarea || !send_button)
 		throw new Error("Error: Open a conversation window.")
@@ -29,7 +29,6 @@ async function sendScript(script_text){
 	
 	return lines.length;
 }
-
 sendScript(`
 SHREK 
 
